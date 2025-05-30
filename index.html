@@ -86,5 +86,36 @@
     </div>
 </footer>
 
+<!-- TAMBAH skrip ini sebelum </body> tag -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const buyButtons = document.querySelectorAll('.product .button');
+
+        buyButtons.forEach(button => {
+            button.addEventListener('click', function (e) {
+                e.preventDefault(); // elak reload
+                const productElement = button.closest('.product');
+                const name = productElement.querySelector('h3').textContent;
+                const image = productElement.querySelector('img').src;
+                const price = name.includes('Asics') ? 199.00 :
+                              name.includes('ADIDAS') ? 250.00 :
+                              name.includes('Nike') ? 300.00 :
+                              name.includes('Salomon') ? 280.00 : 0;
+
+                const product = {
+                    name,
+                    image,
+                    price,
+                    quantity: 1
+                };
+
+                localStorage.setItem('selectedProduct', JSON.stringify(product));
+                window.location.href = "checkout.html";
+            });
+        });
+    });
+</script>
+
+
 </body>
 </html>
