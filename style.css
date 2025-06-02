@@ -101,7 +101,7 @@ body {
 .button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #00e5ff;
+  background-color: #62ff00;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
@@ -111,7 +111,7 @@ body {
 }
 
 .button:hover {
-  background-color: #00b0ff;
+  background-color: #c3ff00;
 }
 
 /* PRODUCT GALLERY */
